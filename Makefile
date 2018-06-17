@@ -13,6 +13,5 @@ publish:
 	gcloud docker -- push us.gcr.io/derekpedersen-195304/resume-api-dotnetcore:latest
 
 deploy:
-	kubectl delete deployment resume-api-dotnetcore-deployment
-	kubectl create -f ./kubernetes/deployment.yaml
+	kubectl apply -f ./kubernetes/deployment.yaml
 	kubectl apply -f ./kubernetes/service.yaml
