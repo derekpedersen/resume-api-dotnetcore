@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: resume-api-dotnetcore
-        image: us.gcr.io/derekpedersen-195304/resume-api-dotnetcore:latest
+        image: us.gcr.io/%GCLOUD_PROJECT_ID%/resume-api-dotnetcore:%GIT_COMMIT_SHA%
         ports:
         - containerPort: 80
         livenessProbe:
