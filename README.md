@@ -1,7 +1,7 @@
 # resume - api - dotnetcore
 
 [![Build Status](https://jenkins.derekpedersen.com/buildStatus/icon?job=derekpedersen/resume-api-dotnetcore/master&style=plastic&.png)](https://jenkins.derekpedersen.com/job/derekpedersen/job/resume-api-dotnetcore/job/master/)
-[![Coverage Status](https://coveralls.io/repos/github/derekpedersen/resume-api-dotnetcore/badge.png?branch=master)](https://coveralls.io/github/derekpedersen/resume-api-dotnetcore)
+[![Coverage Status](https://coveralls.io/repos/github/derekpedersen/resume-api-dotnetcore/badge.png?branch=master)](https://coveralls.io/github/derekpedersen/resume-api-dotnetcore?branch=master)
 
 This is the resume api written in dotnet core.
 
