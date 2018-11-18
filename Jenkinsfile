@@ -62,7 +62,7 @@ pipeline {
                 dir('/root/workspace/resume-api-dotnetcore') {
                     step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/coverage.cobertura.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false]) 
                     sh '[ -f ./tools/csmacnz.Coveralls ] || dotnet tool install coveralls.net --version 1.0.0 --tool-path tools'
-                    sh './tools/csmacnz.Coveralls --opencover -i tests/coverage.opencover.xml --commitBranch $GIT_BRANCH --commitId $GIT_COMMIT --serviceName jenkins'
+                    sh './tools/csmacnz.Coveralls --opencover -i tests/coverage.opencover.xml --commitBranch $GIT_BRANCH --commitId $GIT_COMMIT --serviceName jenkins --jobId $BUILD_NUMBER'
                 }
             }
         }
