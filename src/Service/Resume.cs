@@ -12,32 +12,23 @@ namespace ResumeAPI.Service
             return new Model.Resume
             {
                 Title = "Derek Pedersen",
-                Subtitle = "Full Stack Developer",
+                Subtitle = "Full Stack Software Engineer",
                 Skillset = new string[]{
                     "C#",
-                    "ASP.Net Web Api",
-                    "Angular (1.0, 1.5, 2.0+)",
+                    "ASP.NET Web Api",
+                    "Angular",
                     "Typescript",
-                    "PowerShell",
-                    "Azure Key Vault",
-                    "Azure Storage",
-                    "Azure Functions",
-                    "git",
-                    "TFVC",
-                    "SVN",
-                    "javascript",
+                    "Azure",
                     "jQuery",
                     "SCSS",
-                    "FlexBox",
                     "Selenium",
-                    "REST",
-                    "SOAP",
-                    "GoCD",
-                    "VSTS",
-                    "Jira",
-                    "Bamboo"
+                    "CI/CD Pipelines",
+                    "Golang",
+                    "SQL",
+                    "Kubernetes",
+                    "Google Cloud"
                 },
-                Content = "Full stack developer experienced in maintaining, building, and designing critical business applications and infrastructure. I have worked in a variety of environments from startup to Fortune 50 and in a range of roles from Software Developer to Solutions Architect."
+                Content = "I’m a full stack software engineer and I’ve worked in a variety of fields (e-commerce, healthcare, consulting) across a range of business environments (start-up to fortune 50)."
             };
         }
     }
