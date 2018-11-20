@@ -1,5 +1,5 @@
 # Build runtime image
-FROM microsoft/aspnetcore-build:2.0
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
 
 # Set working directory
 WORKDIR /app
