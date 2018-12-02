@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 
 using ResumeAPI.Model;
 using ResumeAPI.Service;
+using Microsoft.AspNetCore.Cors;
 
 namespace ResumeAPI.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors]
     public class ResumeController : Controller
     {
         private ResumeService _service { get; set; }
@@ -25,6 +27,7 @@ namespace ResumeAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [EnableCors]
         public async Task<IActionResult> GetResume()
         {
             try
