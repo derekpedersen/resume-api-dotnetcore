@@ -11,7 +11,8 @@ using ResumeAPI.Service;
 namespace ResumeAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class ResumeController : Controller
+    [ApiController]
+    public class ResumeController : ControllerBase
     {
         private ResumeService _service { get; set; }
 

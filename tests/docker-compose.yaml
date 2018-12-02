@@ -1,0 +1,6 @@
+version: "2"
+services:
+  api:
+    image: derekpedersen-spa-angular:develop
+    ports:
+      - "4200:80"

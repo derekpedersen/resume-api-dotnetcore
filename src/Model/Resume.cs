@@ -8,6 +8,6 @@ namespace ResumeAPI.Model
         public string Title;
         public string Subtitle;
         public string[] Skillset;
-        public string Content;
+        public string[] Content;
     }
 }
