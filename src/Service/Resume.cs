@@ -43,15 +43,13 @@ namespace ResumeAPI.Service
                     "Debian",
                     "Windows"
                 },
-            Content = "**Software Engineer** by day, skateboarder by weekend.<br />" +
-            "<br />" + 
-            "I'm a full stack software engineer and I've worked in a variety of fields(e - commerce, healthcare, consulting) across a range of business environments(start - up to fortune 50).<br />" + 
-            "<br />" + 
-            "Used to spend most my days writing[C#](https://docs.microsoft.com/en-us/dotnet/csharp/) but now I'm onto that [Golang](https://golang.org/).<br />" +
-            "<br />" + 
-            "Started with[ASP.NET web forms](https://www.asp.net/web-forms) and [jQuery](https://jquery.com/) now building SPAs using [angular](https://angular.io/).<br />" +
-            "<br />" +
-            "Preferred Environment: Definitely[Debian](https://www.debian.org/) based linux.<br />"
+            Content = new string[] {
+                "Software Engineer by day, skateboarder by weekend.",
+                "I'm a full stack software engineer and I've worked in a variety of fields(e - commerce, healthcare, consulting) across a range of business environments(start - up to fortune 50).",
+                "Used to spend most my days writing C# but now I'm onto that Golang.",
+                "Started with ASP.NET web forms and jQuery now building SPAs using angular.",
+                "Preferred Environment: Definitely Debian based linux."
+                }
             };
     }
 }
