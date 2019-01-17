@@ -7,6 +7,8 @@ This is the resume api written in dotnet core.
 
 # Docker
 
+This project is deployed as a docker container
+
 ## Build
 - docker build ./ -t resume-api-dotnetcore
 
@@ -16,3 +18,19 @@ This is the resume api written in dotnet core.
 ## GCR
 - docker tag resume-api-dotnetcore us.gcr.io/${GCLOUD_PROJECT_ID}/resume-api-dotnetcore:latest
 - gcloud docker -- push us.gcr.io/${GCLOUD_PROJECT_ID}/resume-api-dotnetcore:latest
+
+# API
+
+This is a RESTful API that was written in C# targeting the dotnet core 2.0
+
+## Resume Controller
+
+The Resume Controller really is the entire show. 
+
+### PDF Download
+
+The Resume Controller provides the functionality to download my resume in the PDF format.
+
+### JSON
+
+The Resume Controller also returns a JSON representation of my resume.
