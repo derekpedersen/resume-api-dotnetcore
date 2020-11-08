@@ -23,3 +23,9 @@ publish:
 	gcloud docker -- push us.gcr.io/sleipnir/resume-api-dotnetcore:${GIT_COMMIT_SHA}
 
 kubernetes: build docker publish
+
+set-versio:
+	"set-version": "sed -i -e 's/^version:.*$/version: '$(date '+%Y.%m.%d.%H%M')'/' -e 's/^appVersion:.*$/appVersion: '$(git rev-parse HEAD)'/' .helm/Chart.yaml"
+
+deploy:
+	helm upgrade resume-api-dotnetcore .helm
