@@ -24,7 +24,7 @@ publish:
 
 kubernetes: build docker publish
 
-set-versio:
+set-version:
 	"set-version": "sed -i -e 's/^version:.*$/version: '$(date '+%Y.%m.%d.%H%M')'/' -e 's/^appVersion:.*$/appVersion: '$(git rev-parse HEAD)'/' .helm/Chart.yaml"
 
 deploy:
