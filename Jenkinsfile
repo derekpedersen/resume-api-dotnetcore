@@ -50,7 +50,7 @@ pipeline {
             steps {
                 withCredentials([[$class: 'StringBinding', credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID']]) {
                     dir('/root/workspace/resume-api-dotnetcore') {
-                        sh 'make set-version'
+                        sh "sed -i -e 's/^version:.*$/version: '$(date '+%Y.%m.%d.%H%M')'/' -e 's/^appVersion:.*$/appVersion: '$(git rev-parse HEAD)'/' .helm/Chart.yaml"
                         sh 'make deploy'
                     }
                 }
