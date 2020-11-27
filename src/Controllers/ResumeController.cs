@@ -44,7 +44,7 @@ namespace ResumeAPI.Controllers
 
                 if(dataStream == null) return NotFound();
 
-                return File(dataStream, "application/octet-stream", "Derek_Pedersen_Resume.pdf"); // returns a FileStreamResult
+                return File(dataStream, "application/octet-stream", "Derek_Pedersen_Resume.pdf");
             }
             catch (Exception ex)
             {
