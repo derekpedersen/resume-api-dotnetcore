@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace ResumeAPI.Model
@@ -15,7 +14,7 @@ namespace ResumeAPI.Model
         public string Description;
         public string[] Skillset;
         public string[] Content;
-        public Job[] Jobs;
-        public Education[] Educations;
+        public List<Job> Jobs;
+        public List<Education> Educations;
     }
 }
