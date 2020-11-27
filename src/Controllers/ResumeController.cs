@@ -1,11 +1,8 @@
 using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-using ResumeAPI.Model;
 using ResumeAPI.Service;
 
 namespace ResumeAPI.Controllers
@@ -21,22 +18,18 @@ namespace ResumeAPI.Controllers
             this._service = new ResumeService();
         }
 
-        /// <summary>
-        /// Gets my resume
-        /// </summary>
-        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetResume()
         {
             try
             {
-                var resume = this._service.GetResume();
+                var resume = await this._service.GetResume();
 
                 return Ok(resume);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Oops an error occured!");
+                return StatusCode(500, ex);
             }
         }
 
@@ -55,7 +48,7 @@ namespace ResumeAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Oops an error occured!");
+                return StatusCode(500, ex);
             }
         }
     }

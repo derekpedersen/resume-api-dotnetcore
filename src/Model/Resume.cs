@@ -9,5 +9,7 @@ namespace ResumeAPI.Model
         public string Subtitle;
         public string[] Skillset;
         public string[] Content;
+        public Job[] Jobs;
+        public Education[] Educations;
     }
 }

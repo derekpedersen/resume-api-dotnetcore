@@ -2,7 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using ResumeAPI.Service;
 
-namespace tests
+namespace tests.Service
 {
     [TestClass]
     public class ServiceResumeTests
@@ -17,7 +17,7 @@ namespace tests
             var result = svc.GetResume();
 
             // Assert
-            Assert.AreEqual("Derek Pedersen", result.Title);
+            Assert.AreEqual("Derek Pedersen", result);
         }
     }
 }
