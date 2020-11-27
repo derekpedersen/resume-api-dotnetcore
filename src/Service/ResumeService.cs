@@ -8,6 +8,8 @@ namespace ResumeAPI.Service
     {
         public async Task<Resume> GetResume() => new Resume
         {
+            FirstName = "Derek",
+            LastName = "Pedersen",
             Title = "Derek Pedersen",
             Subtitle = "Full Stack Software Engineer",
             Skillset = new string[]{
