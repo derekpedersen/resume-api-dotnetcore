@@ -25,7 +25,7 @@ publish:
 kubernetes: build docker publish
 
 set-version:
-	./set-version.sh
+	./.tools/set-version.sh
 	
 deploy:
 	helm upgrade resume-api-dotnetcore .helm

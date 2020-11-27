@@ -1,5 +1,4 @@
-using System;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using ResumeAPI.Model;
 
@@ -7,8 +6,10 @@ namespace ResumeAPI.Service
 {
     public class ResumeService 
     {
-        public Model.Resume GetResume() => new Model.Resume
+        public async Task<Resume> GetResume() => new Resume
         {
+            FirstName = "Derek",
+            LastName = "Pedersen",
             Title = "Derek Pedersen",
             Subtitle = "Full Stack Software Engineer",
             Skillset = new string[]{

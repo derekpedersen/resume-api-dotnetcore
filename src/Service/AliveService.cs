@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using ResumeAPI.Model;
 
@@ -7,7 +7,7 @@ namespace ResumeAPI.Service
 {
     public class AliveService 
     {
-        public Model.Alive GetAlive()
+        public async Task<Alive> GetAlive()
         {
             return new Model.Alive
             {
