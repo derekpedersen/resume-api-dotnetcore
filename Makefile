@@ -22,8 +22,6 @@ publish:
 	docker tag resume-api-dotnetcore us.gcr.io/sleipnir/resume-api-dotnetcore:${GIT_COMMIT_SHA}
 	gcloud docker -- push us.gcr.io/sleipnir/resume-api-dotnetcore:${GIT_COMMIT_SHA}
 
-kubernetes: build docker publish
-
 set-version:
 	./.tools/set-version.sh
 	

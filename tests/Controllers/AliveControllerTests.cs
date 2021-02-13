@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 using ResumeAPI.Controllers;
 using ResumeAPI.Model;
@@ -10,7 +11,7 @@ namespace tests.Controller
     public class AliveControllerTests
     {
         [TestMethod]
-        public async void GetAlive()
+        public async Task GetAlive()
         {
             // Arrange
             var ctrl = new AliveController();
@@ -21,7 +22,7 @@ namespace tests.Controller
             var model = ok.Value as Alive;
 
             // Assert
-            Assert.AreEqual("Johnny 5 Alive!", result);
+            Assert.AreEqual("Johnny 5 Alive!", model.Message);
         }
     }
 }

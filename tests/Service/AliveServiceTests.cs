@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 
 using ResumeAPI.Service;
 
@@ -8,7 +9,7 @@ namespace tests.Service
     public class ServiceAliveTests
     {
         [TestMethod]
-        public async void GetAlive()
+        public async Task GetAlive()
         {
             // Arrange
             var svc = new AliveService();

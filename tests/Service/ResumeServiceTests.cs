@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 using ResumeAPI.Service;
 using ResumeAPI.Model;
@@ -10,7 +11,7 @@ namespace tests.Service
     public class ServiceResumeTests
     {
         [TestMethod]
-        public async void GetResume()
+        public async Task GetResume()
         {
             // Arrange
             var svc = new ResumeService();
