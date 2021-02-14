@@ -39,7 +39,7 @@ namespace ResumeAPI.Controllers
         {
             try
             {
-                var dataBytes = System.IO.File.ReadAllBytes(Environment.GetEnvironmentVariable("RESUME_PDF_FILE")); 
+                var dataBytes = System.IO.File.ReadAllBytes(this._service.GetResumeFilePath()); 
                 var dataStream = new MemoryStream(dataBytes); 
 
                 if(dataStream == null) return NotFound();

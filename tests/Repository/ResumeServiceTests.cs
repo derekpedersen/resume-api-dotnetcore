@@ -1,21 +1,20 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
+using ResumeAPI.Repository;
 
-using ResumeAPI.Service;
-
-namespace tests.Service
+namespace tests.Repository
 {
     [TestClass]
-    public class ServiceResumeTests
+    public class ResumeRepositoryTests
     {
         [TestMethod]
         public async Task GetResume()
         {
             // Arrange
-            var svc = new ResumeService();
+            var repo = new ResumeRepository();
 
             // Act
-            var result = await svc.GetResume();
+            var result = await repo.GetResume();
 
             // Assert
             Assert.AreEqual("Derek", result.FirstName);

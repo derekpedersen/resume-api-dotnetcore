@@ -1,21 +1,20 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
+using ResumeAPI.Repository;
 
-using ResumeAPI.Service;
-
-namespace tests.Service
+namespace tests.Repository
 {
     [TestClass]
-    public class TechServiceTests
+    public class TechRepositoryTests
     {
         [TestMethod]
         public async Task GetTechs()
         {
             // Arrange
-            var svc = new TechService();
+            var repo = new TechRepository();
 
             // Act
-            var result = await svc.GetTechs();
+            var result = await repo.GetTechs();
 
             // Assert
             Assert.AreEqual(1, result.Count);

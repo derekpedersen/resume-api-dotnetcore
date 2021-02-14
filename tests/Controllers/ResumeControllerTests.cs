@@ -24,5 +24,19 @@ namespace tests.Controller
             // Assert
             Assert.AreEqual("Derek", model.FirstName);
         }
+
+        [TestMethod]
+        public async Task DownloadResume()
+        {
+            // Arrange
+            var ctrl = new ResumeController();
+
+            // Act
+            var result = await ctrl.DownloadResume();
+            var ok = result as FileResult;
+
+            // Assert
+            Assert.AreEqual("Derek_Pedersen_Resume.pdf", ok.FileDownloadName);
+        }
     }
 }

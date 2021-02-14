@@ -21,5 +21,13 @@ namespace ResumeAPI.Service
             var resume = await this._repository.GetResume();
             return resume;
         }
+
+        public String GetResumeFilePath() {
+            String env = Environment.GetEnvironmentVariable("RESUME_PDF_FILE");
+            if (String.IsNullOrEmpty(env)) {
+                env = "../../../../docs/resume/Derek_Pedersen_Resume.pdf";
+            }
+            return env;
+        }
     }
 }

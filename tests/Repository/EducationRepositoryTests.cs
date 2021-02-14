@@ -1,21 +1,21 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
-using ResumeAPI.Service;
+using ResumeAPI.Repository;
 
-namespace tests.Service
+namespace tests.Repository
 {
     [TestClass]
-    public class ServiceEducationTests
+    public class EducationRepositoryTests
     {
         [TestMethod]
         public async Task GetEducations()
         {
             // Arrange
-            var svc = new EducationService();
+            var repo = new EducationRepository();
 
             // Act
-            var result = await svc.GetEducations();
+            var result = await repo.GetEducations();
 
             // Assert
             Assert.AreEqual(2, result.Count);
