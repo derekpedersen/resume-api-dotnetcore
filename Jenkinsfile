@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'build-dotnetcore-stable'
     }
+    options {
+        skipDefaultCheckout true
+    }
     stages {
         stage('Checkout') {
             steps{
