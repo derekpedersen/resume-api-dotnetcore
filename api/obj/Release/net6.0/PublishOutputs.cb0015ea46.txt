@@ -1,0 +1,11 @@
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/api
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/appsettings.Development.json
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/appsettings.json
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/api.dll
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/api.deps.json
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/api.runtimeconfig.json
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/api.pdb
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/Microsoft.OpenApi.dll
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/Swashbuckle.AspNetCore.Swagger.dll
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/out/Swashbuckle.AspNetCore.SwaggerUI.dll

@@ -1,24 +1,22 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using System.Threading.Tasks;
 
-using ResumeAPI.Repository;
+using api.Repository;
 
-namespace tests.Repository
+namespace tests.Repository;
+public class JobRepositoryTests
 {
-    [TestClass]
-    public class JobRepositoryTests
+    [Fact]
+    public async Task GetJobs()
     {
-        [TestMethod]
-        public async Task GetJobs()
-        {
-            // Arrange
-            var repo = new JobRepository();
+        // Arrange
+        var repo = new JobRepository();
 
-            // Act
-            var result = await repo.GetJobs();
+        // Act
+        var result = await repo.GetJobs();
 
-            // Assert
-            Assert.AreEqual(4, result.Count);
-        }
+        // Assert
+        Assert.Equal(4, result.Count);
     }
 }
+

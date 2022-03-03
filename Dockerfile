@@ -13,4 +13,4 @@ ENV RESUME_PDF_FILE=Derek_Pedersen_Resume.pdf
 
 EXPOSE 80
 
-ENTRYPOINT ["dotnet", "resume-api-dotnetcore.dll"]
+ENTRYPOINT ["dotnet", "api.dll"]

@@ -1,42 +1,40 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-using ResumeAPI.Controllers;
-using ResumeAPI.Model;
+using api.Controllers;
+using api.Models;
 
-namespace tests.Controller
+namespace tests.Controller;
+public class ResumeControllerTests
 {
-    [TestClass]
-    public class ResumeControllerTests
+    [Fact]
+    public async Task GetResume()
     {
-        [TestMethod]
-        public async Task GetResume()
-        {
-            // Arrange
-            var ctrl = new ResumeController();
+        // Arrange
+        var ctrl = new ResumeController();
 
-            // Act
-            var result = await ctrl.GetResume();
-            var ok = result as OkObjectResult;
-            var model = ok.Value as Resume;
+        // Act
+        var result = await ctrl.GetResume();
+        var ok = result as OkObjectResult;
+        var model = ok.Value as Resume;
 
-            // Assert
-            Assert.AreEqual("Derek", model.FirstName);
-        }
+        // Assert
+        Assert.Equal("Derek", model.FirstName);
+    }
 
-        [TestMethod]
-        public async Task DownloadResume()
-        {
-            // Arrange
-            var ctrl = new ResumeController();
+    [Fact]
+    public async Task DownloadResume()
+    {
+        // Arrange
+        var ctrl = new ResumeController();
 
-            // Act
-            var result = await ctrl.DownloadResume();
-            var ok = result as FileResult;
+        // Act
+        var result = await ctrl.DownloadResume();
+        var ok = result as FileResult;
 
-            // Assert
-            Assert.AreEqual("Derek_Pedersen_Resume.pdf", ok.FileDownloadName);
-        }
+        // Assert
+        Assert.Equal("Derek_Pedersen_Resume.pdf", ok.FileDownloadName);
     }
 }
+

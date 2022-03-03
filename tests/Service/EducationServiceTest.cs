@@ -1,24 +1,23 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using System.Threading.Tasks;
 
-using ResumeAPI.Service;
+using api.Service;
 
-namespace tests.Service
+namespace tests.Service;
+
+public class ServiceEducationTests
 {
-    [TestClass]
-    public class ServiceEducationTests
+    [Fact]
+    public async Task GetEducations()
     {
-        [TestMethod]
-        public async Task GetEducations()
-        {
-            // Arrange
-            var svc = new EducationService();
+        // Arrange
+        var svc = new EducationService();
 
-            // Act
-            var result = await svc.GetEducations();
+        // Act
+        var result = await svc.GetEducations();
 
-            // Assert
-            Assert.AreEqual(2, result.Count);
-        }
+        // Assert
+        Assert.Equal(2, result.Count);
     }
 }
+

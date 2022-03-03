@@ -1,17 +1,17 @@
 export GIT_COMMIT_SHA = $(shell git rev-parse HEAD)
 
 local:
-	dotnet restore ./src/resume-api-dotnetcore.csproj
-	dotnet publish ./src/resume-api-dotnetcore.csproj -c Release -o out
+	dotnet restore ./api/api.csproj
+	dotnet publish ./api/api.csproj -c Release -o out
 
 test:
 	cd tests && dotnet test --collect:"XPlat Code Coverage"
 	
 run:
-	dotnet ./src/out/resume-api-dotnetcore.dll
+	dotnet ./api/out/api.dll
 
 build:
-	cd src && \
+	cd api && \
 	dotnet restore && \
 	dotnet publish -c Release -o out
 

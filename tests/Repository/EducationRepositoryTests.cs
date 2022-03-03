@@ -1,24 +1,22 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using System.Threading.Tasks;
 
-using ResumeAPI.Repository;
+using api.Repository;
 
-namespace tests.Repository
+namespace tests.Repository;
+public class EducationRepositoryTests
 {
-    [TestClass]
-    public class EducationRepositoryTests
+    [Fact]
+    public async Task GetEducations()
     {
-        [TestMethod]
-        public async Task GetEducations()
-        {
-            // Arrange
-            var repo = new EducationRepository();
+        // Arrange
+        var repo = new EducationRepository();
 
-            // Act
-            var result = await repo.GetEducations();
+        // Act
+        var result = await repo.GetEducations();
 
-            // Assert
-            Assert.AreEqual(2, result.Count);
-        }
+        // Assert
+        Assert.Equal(2, result.Count);
     }
 }
+

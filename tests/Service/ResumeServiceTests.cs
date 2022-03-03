@@ -1,24 +1,23 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using System.Threading.Tasks;
 
-using ResumeAPI.Service;
+using api.Service;
 
-namespace tests.Service
+namespace tests.Service;
+
+public class ServiceResumeTests
 {
-    [TestClass]
-    public class ServiceResumeTests
+    [Fact]
+    public async Task GetResume()
     {
-        [TestMethod]
-        public async Task GetResume()
-        {
-            // Arrange
-            var svc = new ResumeService();
+        // Arrange
+        var svc = new ResumeService();
 
-            // Act
-            var result = await svc.GetResume();
+        // Act
+        var result = await svc.GetResume();
 
-            // Assert
-            Assert.AreEqual("Derek", result.FirstName);
-        }
+        // Assert
+        Assert.Equal("Derek", result.FirstName);
     }
 }
+

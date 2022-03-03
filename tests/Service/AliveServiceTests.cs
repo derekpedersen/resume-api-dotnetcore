@@ -1,24 +1,23 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using System.Threading.Tasks;
 
-using ResumeAPI.Service;
+using api.Service;
 
-namespace tests.Service
+namespace tests.Service;
+
+public class ServiceAliveTests
 {
-    [TestClass]
-    public class ServiceAliveTests
+    [Fact]
+    public async Task GetAlive()
     {
-        [TestMethod]
-        public async Task GetAlive()
-        {
-            // Arrange
-            var svc = new AliveService();
+        // Arrange
+        var svc = new AliveService();
 
-            // Act
-            var result = await svc.GetAlive();
+        // Act
+        var result = await svc.GetAlive();
 
-            // Assert
-            Assert.AreEqual("Johnny 5 Alive!", result.Message);
-        }
+        // Assert
+        Assert.Equal("Johnny 5 Alive!", result.Message);
     }
 }
+
