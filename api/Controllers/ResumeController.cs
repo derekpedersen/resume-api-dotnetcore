@@ -2,12 +2,12 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
 using api.Service;
 
 namespace api.Controllers;
-[Route("api/[controller]")]
+
 [ApiController]
+[Route("api/[controller]")]
 public class ResumeController : ControllerBase
 {
     private ResumeService _service { get; set; }
@@ -18,7 +18,7 @@ public class ResumeController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetResume()
+    public async Task<IActionResult> Get()
     {
         try
         {
@@ -33,8 +33,8 @@ public class ResumeController : ControllerBase
     }
 
     [HttpGet]
-    [Route("/api/resume/download")]
-    public async Task<IActionResult> DownloadResume()
+    [Route("download")]
+    public async Task<IActionResult> Download()
     {
         try
         {
