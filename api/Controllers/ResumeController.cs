@@ -50,17 +50,4 @@ public class ResumeController : ControllerBase
             return StatusCode(500, ex);
         }
     }
-
-    [HttpGet]
-    [Route("/api/resume/download/test")]
-    public async Task<FileResult> TestDownload()
-    {
-        HttpContext.Response.ContentType = "application/pdf";
-        FileContentResult result = new FileContentResult(System.IO.File.ReadAllBytes(this._service.GetResumeFilePath()), "application/pdf")
-        {
-            FileDownloadName = "test.pdf"
-        };
-
-        return result;
-    }
 }
