@@ -5,8 +5,8 @@ local:
 	dotnet publish ./src/resume-api-dotnetcore.csproj -c Release -o out
 
 test:
-	cd tests && dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=\"cobertura,opencover\"
-
+	cd tests && dotnet test --collect:"XPlat Code Coverage"
+	
 run:
 	dotnet ./src/out/resume-api-dotnetcore.dll
 
