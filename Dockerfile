@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/dotnet/aspnet
 WORKDIR /app
 
 # Copy make build output
-COPY ./src/out .
+COPY ./api/out .
 
 # Copy the resume files
 COPY ./docs/resume/Derek_Pedersen_Resume.pdf .

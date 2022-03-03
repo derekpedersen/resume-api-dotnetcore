@@ -213,11 +213,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/api.csproj",
+      "projectUniqueName": "/home/derek/go/src/github.com/derekpedersen/resume-api-dotnetcore/api/api.csproj",
       "projectName": "api",
-      "projectPath": "/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/api.csproj",
+      "projectPath": "/home/derek/go/src/github.com/derekpedersen/resume-api-dotnetcore/api/api.csproj",
       "packagesPath": "/home/derek/.nuget/packages/",
-      "outputPath": "/home/derek/go/src/github.com/pedersen-io/resume-api-dotnetcore/api/obj/",
+      "outputPath": "/home/derek/go/src/github.com/derekpedersen/resume-api-dotnetcore/api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/derek/.nuget/NuGet/NuGet.Config"

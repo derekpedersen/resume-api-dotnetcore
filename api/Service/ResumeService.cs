@@ -25,7 +25,7 @@ namespace api.Service
         public String GetResumeFilePath() {
             String env = Environment.GetEnvironmentVariable("RESUME_PDF_FILE");
             if (String.IsNullOrEmpty(env)) {
-                env = "../../../../docs/resume/Derek_Pedersen_Resume.pdf";
+                env = "./docs/resume/Derek_Pedersen_Resume.pdf";
             }
             return env;
         }
