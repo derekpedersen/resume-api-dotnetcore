@@ -20,10 +20,13 @@ docker:
 
 publish:
 	docker tag resume-api-dotnetcore us.gcr.io/sleipnir/resume-api-dotnetcore:${GIT_COMMIT_SHA}
-	gcloud docker -- push us.gcr.io/sleipnir/resume-api-dotnetcore:${GIT_COMMIT_SHA}
+	gcloud auth configure-docker
+	docker -- push us.gcr.io/sleipnir/resume-api-dotnetcore:${GIT_COMMIT_SHA}
 
 set-version:
 	./.tools/set-version.sh
 	
 deploy:
 	helm upgrade resume-api-dotnetcore .helm
+
+kubernetes: build docker publish set-version deploy
