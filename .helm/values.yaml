@@ -51,10 +51,17 @@ ingress:
       paths:
         - path: /api
           pathType: ImplementationSpecific
+    - host: derek.pedersen.io
+      paths:
+        - path: /api
+          pathType: ImplementationSpecific
   tls: 
-   - secretName: resume.pedersen.io
+   - secretName: resume-pedersen-io-tls
      hosts:
        - resume.pedersen.io
+   - secretName: derek-pedersen-io-tls
+     hosts:
+       - derek.pedersen.io
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
