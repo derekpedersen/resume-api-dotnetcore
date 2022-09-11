@@ -27,6 +27,6 @@ set-version:
 	./.tools/set-version.sh
 	
 deploy:
-	helm upgrade resume-api-dotnetcore .helm
+	helm upgrade --install resume-api-dotnetcore .helm
 
 kubernetes: build docker publish set-version deploy
