@@ -19,11 +19,13 @@ docker:
 	docker build ./ -t resume-api-dotnetcore
 
 publish:
-	docker tag resume-api-dotnetcore us.gcr.io/sleipnir/resume-api-dotnetcore:${GIT_COMMIT_SHA}
-	gcloud docker -- push us.gcr.io/sleipnir/resume-api-dotnetcore:${GIT_COMMIT_SHA}
+	docker tag resume-api-dotnetcore derekpedersen/resume-api-dotnetcore:${GIT_COMMIT_SHA}
+	docker push derekpedersen/resume-api-dotnetcore:${GIT_COMMIT_SHA}
 
 set-version:
 	./.tools/set-version.sh
 	
-deploy:
-	helm upgrade resume-api-dotnetcore .helm
+deploy: set-version
+	helm upgrade --install resume-api-dotnetcore .helm
+
+release: test build docker publish deploy

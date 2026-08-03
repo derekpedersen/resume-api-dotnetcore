@@ -15,9 +15,9 @@ public class ResumeControllerTests
         var ctrl = new ResumeController();
 
         // Act
-        var result = await ctrl.GetResume();
-        var ok = result as OkObjectResult;
-        var model = ok.Value as Resume;
+        var result = await ctrl.Get();
+        var ok = Assert.IsType<OkObjectResult>(result);
+        var model = Assert.IsType<Resume>(ok.Value);
 
         // Assert
         Assert.Equal("Derek", model.FirstName);
@@ -30,11 +30,11 @@ public class ResumeControllerTests
         var ctrl = new ResumeController();
 
         // Act
-        var result = await ctrl.DownloadResume();
-        var ok = result as FileResult;
+        var result = await ctrl.Download();
+        var fileResult = Assert.IsAssignableFrom<FileResult>(result);
 
         // Assert
-        Assert.Equal("Derek_Pedersen_Resume.pdf", ok.FileDownloadName);
+        Assert.Equal("Derek_Pedersen_Resume.pdf", fileResult.FileDownloadName);
     }
 }
 

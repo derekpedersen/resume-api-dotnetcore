@@ -16,7 +16,7 @@ public class TechServiceTests
         var result = await svc.GetTechs();
 
         // Assert
-        Assert.Equal(1, result.Count);
+        Assert.Single(result);
     }
 }
 

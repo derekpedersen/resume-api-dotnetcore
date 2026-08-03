@@ -3,16 +3,16 @@ using System.Collections.Generic;
 namespace api.Models;
 public class Resume
 {
-    public string FirstName;
-    public string LastName;
-    public string PhoneNumber;
-    public string EmailAddress;
-    public string URL;
-    public string Title;
-    public string Subtitle;
-    public string Description;
-    public string[] Skillset;
-    public string[] Content;
-    public List<Job> Jobs;
-    public List<Education> Educations;
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
+    public string PhoneNumber { get; set; } = string.Empty;
+    public string EmailAddress { get; set; } = string.Empty;
+    public string URL { get; set; } = string.Empty;
+    public string Title { get; set; } = string.Empty;
+    public string Subtitle { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public string[] Skillset { get; set; } = Array.Empty<string>();
+    public string[] Content { get; set; } = Array.Empty<string>();
+    public List<Job> Jobs { get; set; } = new();
+    public List<Education> Educations { get; set; } = new();
 }
