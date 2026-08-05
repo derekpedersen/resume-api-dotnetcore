@@ -5,5 +5,5 @@ namespace api.Models;
 
 public class Alive
 {
-    public string Message;
+    public string Message { get; set; } = string.Empty;
 }

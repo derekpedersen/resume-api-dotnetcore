@@ -16,8 +16,8 @@ public class AliveControllerTests
 
         // Act
         var result = await ctrl.GetAlive();
-        var ok = result as OkObjectResult;
-        var model = ok.Value as Alive;
+        var ok = Assert.IsType<OkObjectResult>(result);
+        var model = Assert.IsType<Alive>(ok.Value);
 
         // Assert
         Assert.Equal("Johnny 5 Alive!", model.Message);

@@ -15,7 +15,7 @@ public class TechRepositoryTests
         var result = await repo.GetTechs();
 
         // Assert
-        Assert.Equal(1, result.Count);
+        Assert.Single(result);
     }
 }
 

@@ -10,6 +10,7 @@ COPY ./api/out .
 # Copy the resume files
 COPY ./docs/resume/Derek_Pedersen_Resume.pdf .
 ENV RESUME_PDF_FILE=Derek_Pedersen_Resume.pdf
+ENV ASPNETCORE_URLS=http://+:80
 
 EXPOSE 80
 
