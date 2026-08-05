@@ -21,6 +21,10 @@ The Resume Controller provides the functionality to download my resume in the PD
 
 The Resume Controller also returns a JSON representation of my resume.
 
+# DotNetCore
+
+https://docs.microsoft.com/en-us/dotnet/core/install/macos
+
 # Docker
 
 This project is deployed as a docker container
