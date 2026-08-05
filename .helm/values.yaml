@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: us.gcr.io/sleipnir/resume-api-dotnetcore
+  repository: derekpedersen/resume-api-dotnetcore
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -43,9 +43,9 @@ service:
 ingress:
   enabled: true
   className: ""
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
     - host: resume.pedersen.io
       paths:
@@ -53,15 +53,12 @@ ingress:
           pathType: ImplementationSpecific
     - host: derek.pedersen.io
       paths:
-        - path: /api
+        - path: /
           pathType: ImplementationSpecific
-  tls: 
-   - secretName: resume-pedersen-io-tls
-     hosts:
-       - resume.pedersen.io
-   - secretName: derek-pedersen-io-tls
-     hosts:
-       - derek.pedersen.io
+  tls:
+    - secretName: derek-pedersen-io-tls
+      hosts:
+        - derek.pedersen.io
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

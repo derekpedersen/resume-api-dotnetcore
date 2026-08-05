@@ -22,12 +22,11 @@ namespace api.Service
             return resume;
         }
 
-        public String GetResumeFilePath() {
-            String env = Environment.GetEnvironmentVariable("RESUME_PDF_FILE");
-            if (String.IsNullOrEmpty(env)) {
-                env = "../../../../docs/resume/Derek_Pedersen_Resume.pdf";
-            }
-            return env;
+        public string GetResumeFilePath() {
+            var env = Environment.GetEnvironmentVariable("RESUME_PDF_FILE");
+            return string.IsNullOrEmpty(env)
+                ? "../../../../docs/resume/Derek_Pedersen_Resume.pdf"
+                : env;
         }
     }
 }
