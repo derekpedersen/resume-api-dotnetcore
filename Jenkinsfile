@@ -34,7 +34,7 @@ pipeline {
 
         stage('Publish') {
             when {
-                branch 'master'
+                branch 'main'
             }
             steps {
                 withCredentials([
@@ -47,7 +47,7 @@ pipeline {
 
         stage('Deploy') {
             when {
-                branch 'master'
+                branch 'main'
             }
             steps {
                 withCredentials([
