@@ -6,7 +6,7 @@ using api.Service;
 
 namespace api.Controllers;
 
-    [Route("/")]
+    [Route("/alive")]
     public class AliveController : Controller
     {
         private AliveService _service { get; set; }
