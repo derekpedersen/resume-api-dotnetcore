@@ -37,10 +37,8 @@ pipeline {
                 branch 'main'
             }
             steps {
-                withCredentials([
-                    string(credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID')
-                ]) {
-                    sh 'make publish'
+                withDockerRegistry([credentialsId: 'docker-jenkins-pat', url: "https://index.docker.io/v1/"]) {
+                    sh 'make publish-docker'
                 }
             }
         }
@@ -50,14 +48,10 @@ pipeline {
                 branch 'main'
             }
             steps {
-                withCredentials([
-                    string(credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID')
-                ]) {
-                    sh '''
-                        make set-version
-                        make deploy
-                    '''
-                }
+                sh '''
+                    make set-version
+                    make deploy
+                '''
             }
         }
     }
