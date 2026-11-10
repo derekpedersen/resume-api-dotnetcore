@@ -5,53 +5,35 @@ pipeline {
 
     options {
         skipDefaultCheckout true
+        timeout(time: 30, unit: 'MINUTES')
+    }
+
+    environment {
+        PROJECT_DIR = '.'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'make build'
+                dir("${env.PROJECT_DIR}") {
+                    checkout scm
+                }
             }
         }
 
         stage('Test') {
             steps {
-                sh 'make test'
-            }
-        }
-
-        stage('Docker') {
-            steps {
-                sh 'make docker'
-            }
-        }
-
-        stage('Publish') {
-            when {
-                branch 'main'
-            }
-            steps {
-                withDockerRegistry([credentialsId: 'docker-jenkins-pat', url: "https://index.docker.io/v1/"]) {
-                    sh 'make publish-docker'
+                dir("${env.PROJECT_DIR}") {
+                    sh 'make test'
                 }
             }
         }
 
-        stage('Deploy') {
-            when {
-                branch 'main'
-            }
+        stage('Build') {
             steps {
-                sh '''
-                    make set-version
-                    make deploy
-                '''
+                dir("${env.PROJECT_DIR}") {
+                    sh 'make build'
+                }
             }
         }
     }

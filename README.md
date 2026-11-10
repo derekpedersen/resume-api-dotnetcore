@@ -29,6 +29,28 @@ https://docs.microsoft.com/en-us/dotnet/core/install/macos
 
 This project is deployed as a docker container
 
+# Jenkins Pipelines
+
+This repository uses two Jenkins pipeline files.
+
+## CI Pipeline
+
+- File: `Jenkinsfile`
+- Purpose: checkout, test, and build only.
+- Commands run: `make test`, `make build`.
+
+## Deploy Pipeline
+
+- File: `Jenkinsfile.deploy`
+- Purpose: build, publish docker image, and deploy.
+- Commands run: `make build`, `make docker`, `make publish`, `make deploy`.
+- Deploy execution policy: runs only for manual builds or tag-triggered builds.
+
+Credential usage in `Jenkinsfile.deploy` follows the same fallback pattern as the example repository:
+
+- Docker publish credentials use `DOCKERHUB_CREDENTIALS_ID` when set, otherwise fallback to `docker-jenkins-pat`.
+- Kubernetes kubeconfig credentials use `DOKS_KUBECONFIG_CREDENTIALS_ID` when set, otherwise fallback to `DOKS_KUBECONFIG`.
+
 ## Build
 
 `docker build ./ -t resume-api-dotnetcore`
