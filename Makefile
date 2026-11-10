@@ -22,6 +22,8 @@ publish:
 	docker tag resume-api-dotnetcore derekpedersen/resume-api-dotnetcore:${GIT_COMMIT_SHA}
 	docker push derekpedersen/resume-api-dotnetcore:${GIT_COMMIT_SHA}
 
+publish-docker: publish
+
 set-version:
 	./.tools/set-version.sh
 	
