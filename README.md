@@ -7,7 +7,7 @@ This is the resume api written in dotnet core.
 
 # API
 
-This is a RESTful API that was written in C# targeting the dotnet core 2.0
+This is a RESTful API written in C# targeting .NET 11.
 
 ## Resume Controller
 
@@ -21,7 +21,7 @@ The Resume Controller provides the functionality to download my resume in the PD
 
 The Resume Controller also returns a JSON representation of my resume.
 
-# DotNetCore
+# .NET
 
 https://docs.microsoft.com/en-us/dotnet/core/install/macos
 
